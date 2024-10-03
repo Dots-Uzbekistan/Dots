@@ -1,0 +1,55 @@
+.loaderContainer {
+  display: flex;
+  justify-content: space-between; /* Adjusted for positioning */
+  align-items: flex-start; /* Aligns items to the top */
+  height: 100vh;
+  background-color: #000; /* Background color */
+  color: #fff;
+  font-family: sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  padding: 20px; /* Padding for spacing */
+
+  &.exit {
+    opacity: 0; /* Fade out container */
+  }
+}
+
+.loadingText {
+  height: 100px;
+  margin: 0;
+  font-size: 4rem; /* Adjusted font size */
+}
+
+.percentage {
+  font-size: 10rem; /* Increased font size for visibility */
+  margin: 0;
+  position: absolute; /* Positioned absolutely for bottom right corner */
+  bottom: 20px; /* Distance from bottom */
+  right: 20px; /* Distance from right */
+}
+
+.blackOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black; /* Black overlay */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .loaderContainer {
+    padding: 10px; /* Less padding on mobile */
+  }
+
+  .loadingText {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  .percentage {
+    font-size: 3rem; /* Smaller font size for mobile */
+  }
+}
