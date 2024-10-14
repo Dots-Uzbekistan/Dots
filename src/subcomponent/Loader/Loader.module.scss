@@ -1,33 +1,34 @@
 .loaderContainer {
   display: flex;
-  justify-content: space-between; /* Adjusted for positioning */
-  align-items: flex-start; /* Aligns items to the top */
+  justify-content: space-between;
+  align-items: flex-start;
   height: 100vh;
-  background-color: #000; /* Background color */
+  background-color: #000;
   color: #fff;
   font-family: sans-serif;
   position: relative;
   overflow: hidden;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  padding: 20px; /* Padding for spacing */
+  transition: opacity 0.5s ease;
+  padding: 20px;
 
   &.exit {
-    opacity: 0; /* Fade out container */
+    opacity: 0;
   }
 }
 
 .loadingText {
-  height: 100px;
   margin: 0;
-  font-size: 4rem; /* Adjusted font size */
+  font-size: 4rem;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .percentage {
-  font-size: 10rem; /* Increased font size for visibility */
+  font-size: 10rem;
   margin: 0;
-  position: absolute; /* Positioned absolutely for bottom right corner */
-  bottom: 20px; /* Distance from bottom */
-  right: 20px; /* Distance from right */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .blackOverlay {
@@ -36,20 +37,42 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black; /* Black overlay */
+  background-color: black;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .loaderContainer {
-    padding: 10px; /* Less padding on mobile */
-  }
-
+@media (max-width: 1024px) {
   .loadingText {
-    font-size: 1.5rem; /* Smaller font size for mobile */
+    font-size: 3rem;
   }
 
   .percentage {
-    font-size: 3rem; /* Smaller font size for mobile */
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .loaderContainer {
+    padding: 10px;
+  }
+
+  .loadingText {
+    font-size: 2.5rem;
+  }
+
+  .percentage {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loadingText {
+    font-size: 2rem;
+  }
+
+  .percentage {
+    font-size: 4rem;
   }
 }
