@@ -1,0 +1,64 @@
+.main {
+  background-color: #121212;
+  height: 100vh;
+  color: white;
+  padding: 10rem 0;
+
+  .header_text,
+  .header_text_2,
+  .header_text_3 {
+    font-weight: 400;
+    font-size: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.scrollDownContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #121212;
+  padding: 20px;
+  margin-top: 4rem;
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+.scrollDownArrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .icon {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+    animation: scrollDown 2s infinite ease-in-out;
+  }
+
+  svg {
+    animation: scrollDown 2s infinite ease-in-out;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
