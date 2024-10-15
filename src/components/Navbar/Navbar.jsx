@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { i18n } = useTranslation();
+  const {t, i18n } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -119,9 +119,10 @@ const Navbar = () => {
             exit={{ y: "100vh" }}
             transition={{ type: "tween", duration: 0.6 }}
           >
-            <p>Home</p>
-            <p>About</p>
-            <p>Contact</p>
+            <p>{t("home")}</p>
+            <p>{t("about")}</p>
+            <p>{t("projects")}</p>
+            <p>{t("contact")}</p>
           </motion.div>
         )}
       </div>

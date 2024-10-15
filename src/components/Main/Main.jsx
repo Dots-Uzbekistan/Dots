@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { CgShapeHalfCircle } from "react-icons/cg";
 import styles from "./Main.module.scss";
 const Main = () => {
   const { t } = useTranslation();
@@ -50,6 +49,15 @@ const Main = () => {
           </svg>
         </div>
       </div>
+      <section className={styles.introduction}>
+        <article className={styles.introduction_text_left}>
+          <p>{t("info_left")}</p>
+        </article>
+        <article className={styles.introduction_text_right}>
+          <p>{t("info_right_1")}</p>
+          <p> {t("info_right_2")}</p>
+        </article>
+      </section>
     </section>
   );
 };

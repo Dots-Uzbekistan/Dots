@@ -1,8 +1,8 @@
 .main {
   background-color: #121212;
-  height: 100vh;
+  height: 100%;
   color: white;
-  padding: 10rem 0;
+  padding: 3rem 5rem;
 
   .header_text,
   .header_text_2,
@@ -60,5 +60,19 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+.introduction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  .introduction_text_left {
+    font-size: 20px;
+    width: 30%;
+  }
+  .introduction_text_right {
+    font-size: 50px;
+    width: 70%;
   }
 }
