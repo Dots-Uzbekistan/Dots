@@ -17,16 +17,18 @@
 }
 
 .loadingText {
+  font-weight: 400;
   margin: 0;
-  font-size: 4rem;
+  font-size: 5rem;
   transition: opacity 1s ease, transform 1s ease;
 }
 
 .percentage {
-  font-size: 10rem;
+  font-size: 12rem;
   margin: 0;
   position: absolute;
   bottom: 20px;
+  font-weight: 500;
   right: 20px;
   transition: opacity 1s ease, transform 1s ease;
 }

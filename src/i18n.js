@@ -1,6 +1,7 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import { select } from "framer-motion/client";
 
 i18next
   .use(initReactI18next)
@@ -26,6 +27,8 @@ i18next
             "— Our commitment to excellence drives us to explore uncharted territories in technology, allowing us to deliver solutions that address real-world challenges. we bring together diverse perspectives and skills, allowing us to create holistic solutions tailored to our clients’ needs.",
           info_right_2:
             "Our mission is to transform challenges into opportunities, empowering businesses and individuals to achieve their goals through intuitive and effective technology.",
+          selected: "Selected",
+          works: "Works",
         },
       },
       RU: {
@@ -45,6 +48,8 @@ i18next
             "— Наше стремление к совершенству побуждает нас исследовать неизведанные территории в области технологий, что позволяет нам предлагать решения, которые решают реальные проблемы. мы объединяем различные точки зрения и навыки, что позволяет нам создавать целостные решения, адаптированные к потребностям наших клиентов.",
           info_right_2:
             "Наша миссия — превратить проблемы в возможности, давая возможность предприятиям и частным лицам достигать своих целей с помощью интуитивно понятных и эффективных технологий.",
+          selected: "Выбранные",
+          works: "Работы",
         },
       },
       UZ: {
@@ -64,6 +69,8 @@ i18next
             "— Bizning mukammallikka bo'lgan sodiqligimiz bizni texnologiyada aniqlanmagan hududlarni o'rganishga undaydi, bu bizga real muammolarga javob beradigan yechimlarni taqdim etish imkonini beradi. biz turli istiqbollar va ko'nikmalarni birlashtiramiz, bu bizga mijozlarimizning ehtiyojlariga moslashtirilgan yaxlit echimlarni yaratishga imkon beradi.",
           info_right_2:
             "Bizning vazifamiz qiyinchiliklarni imkoniyatlarga aylantirish, biznes va jismoniy shaxslarga intuitiv va samarali texnologiyalar orqali o‘z maqsadlariga erishish imkonini berishdir.",
+          selected: "Tanlanganlar",
+          works: "Ishlar",
         },
       },
     },

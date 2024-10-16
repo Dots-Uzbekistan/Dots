@@ -1,21 +1,31 @@
+/* Main section styling */
 .main {
   background-color: #121212;
   height: 100%;
   color: white;
-  padding: 3rem 5rem;
+}
 
-  .header_text,
-  .header_text_2,
-  .header_text_3 {
-    font-weight: 400;
-    font-size: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.wrapper_middle_main {
+  width: 90%;
+  margin: auto;
+  padding: 10rem 0;
+}
+
+.header_text,
+.header_text_2,
+.header_text_3 {
+  font-weight: 400;
+  font-size: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 50px;
   }
 }
 
+/* Scroll down animation */
 .scrollDownContainer {
   display: flex;
   flex-direction: column;
@@ -26,12 +36,6 @@
   background-color: #121212;
   padding: 20px;
   margin-top: 4rem;
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-  }
 }
 
 .scrollDownArrow {
@@ -51,6 +55,7 @@
   }
 }
 
+/* Keyframes for smooth scroll down arrow animation */
 @keyframes scrollDown {
   0% {
     transform: translateY(0);
@@ -62,17 +67,107 @@
     transform: translateY(0);
   }
 }
+
+/* Introduction section */
 .introduction {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: 3rem;
+  margin-top: 5rem;
+
+  @media (max-width: 1208px) {
+    flex-direction: column;
+  }
+
   .introduction_text_left {
     font-size: 20px;
-    width: 30%;
+    width: 20%;
+    @media (max-width: 1208px) {
+      width: 100%;
+      font-size: 30px;
+    }
   }
+
   .introduction_text_right {
-    font-size: 50px;
+    font-size: 40px;
     width: 70%;
+    @media (max-width: 1208px) {
+      width: 100%;
+      font-size: 30px;
+    }
+
+    .info_right_2 {
+      margin-top: 2rem;
+    }
+  }
+}
+
+/* Section for selected works */
+.section_selected {
+  text-align: center;
+  margin: 10rem 0 0 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 600px; /* Ensuring consistent height */
+
+  .section_selected_text {
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+/* Slider styling */
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 600px; /* Adjust height as needed */
+  margin-top: 5rem;
+}
+
+.slider_track {
+  display: flex;
+  width: calc(100% * 5); /* Assuming 5 images */
+  animation: slide 15s infinite ease-in-out;
+}
+
+.slider_image {
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the full height */
+}
+
+/* Auto-slide keyframes */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
