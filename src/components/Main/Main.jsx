@@ -3,10 +3,12 @@ import { useTranslation } from "react-i18next";
 import styles from "./Main.module.scss";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+
 const Main = () => {
   const { t } = useTranslation();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+
   const textVariants = {
     hiddenLeft: { opacity: 0, x: -100 },
     hiddenRight: { opacity: 0, x: 100 },
@@ -16,6 +18,20 @@ const Main = () => {
       transition: { type: "spring", stiffness: 50, damping: 15 },
     },
   };
+
+  const projects = [
+    { id: 1, title: "PROJECT 1", description: "Short project description" },
+    { id: 2, title: "PROJECT 2", description: "Short project description" },
+    { id: 3, title: "PROJECT 3", description: "Short project description" },
+    { id: 4, title: "PROJECT 4", description: "Short project description" },
+    { id: 5, title: "PROJECT 5", description: "Short project description" },
+  ];
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <section className={styles.main}>
       <div className={styles.wrapper_middle_main}>
@@ -25,7 +41,7 @@ const Main = () => {
         <div className={styles.scrollDownContainer}>
           <p>{t("scroll_down")}</p>
           <div className={styles.scrollDownArrow}>
-            {/* <svg
+            <svg
               width="24"
               height="14"
               viewBox="0 0 31 14"
@@ -35,7 +51,7 @@ const Main = () => {
               <path
                 d="M29.3047 12.7594C28.4904 9.72048 26.6962 7.0352 24.2002 5.11998C21.7043 3.20477 18.6461 2.16666 15.5 2.16666C12.3539 2.16666 9.29574 3.20477 6.79978 5.11998C4.30382 7.0352 2.50957 9.72048 1.6953 12.7594"
                 stroke="white"
-                stroke-width="2.5"
+                strokeWidth="2.5"
               />
             </svg>
             <svg
@@ -59,7 +75,7 @@ const Main = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-            </svg> */}
+            </svg>
           </div>
         </div>
         <section className={styles.introduction}>
@@ -88,6 +104,38 @@ const Main = () => {
           >
             {t("works")}
           </motion.h1>
+        </section>
+        <section className={styles.projectsContainer}>
+          <div className={styles.guidingPrinciples}>
+            <p>
+              SIMPLICITY AND CLARITY ARE OUR GUIDING PRINCIPLES. FROM START TO
+              FINISH – FROM DESIGN TO PRODUCT DEVELOPMENT
+            </p>
+          </div>
+          <div>
+            <div>
+              {projects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  className={styles.projectItem}
+                  initial="hidden"
+                  animate="visible"
+                  variants={itemVariants}
+                >
+                  <div className={styles.projectNumber}>0{index + 1}</div>
+                  <div className={styles.projectContent}>
+                    <h2>{project.title}</h2>
+                    <p>{project.description}</p>
+                  </div>
+                  <div className={styles.arrow}>→</div>
+                </motion.div>
+              ))}
+            </div>
+            <div className={styles.footerText}>
+              <p>CREATIVELY DRIVEN</p>
+              <p>SOLUTION ORIENTATED</p>
+            </div>
+          </div>
         </section>
       </div>
     </section>
