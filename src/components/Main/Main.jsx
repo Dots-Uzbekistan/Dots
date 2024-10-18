@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import styles from "./Main.module.scss";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Footer from "../Footer/Footer";
+import Statistics from "../Statistics/Statistics";
 
 const Main = () => {
   const { t } = useTranslation();
@@ -100,17 +102,14 @@ const Main = () => {
             initial="hiddenRight"
             animate={isInView ? "visible" : "hiddenRight"}
             variants={textVariants}
-            className={styles.section_selected_text}
+            className={styles.section_selected_text_2}
           >
             {t("works")}
           </motion.h1>
         </section>
         <section className={styles.projectsContainer}>
           <div className={styles.guidingPrinciples}>
-            <p>
-              SIMPLICITY AND CLARITY ARE OUR GUIDING PRINCIPLES. FROM START TO
-              FINISH – FROM DESIGN TO PRODUCT DEVELOPMENT
-            </p>
+            <p>{t("guiding")}</p>
           </div>
           <div>
             <div>
@@ -137,6 +136,10 @@ const Main = () => {
             </div>
           </div>
         </section>
+      </div>
+      <Statistics />
+      <div className={styles.wrapper_middle_main}>
+        <Footer />
       </div>
     </section>
   );

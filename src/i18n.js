@@ -29,6 +29,7 @@ i18next
             "Our mission is to transform challenges into opportunities, empowering businesses and individuals to achieve their goals through intuitive and effective technology.",
           selected: "Selected",
           works: "Works",
+          guiding: "SIMPLICITY AND CLARITY ARE OUR GUIDING PRINCIPLES. FROM START TO FINISH – FROM DESIGN TO PRODUCT DEVELOPMENT"
         },
       },
       RU: {
@@ -50,6 +51,7 @@ i18next
             "Наша миссия — превратить проблемы в возможности, давая возможность предприятиям и частным лицам достигать своих целей с помощью интуитивно понятных и эффективных технологий.",
           selected: "Выбранные",
           works: "Работы",
+          guiding: ""
         },
       },
       UZ: {

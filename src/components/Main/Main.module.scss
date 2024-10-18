@@ -7,7 +7,7 @@
 .wrapper_middle_main {
   width: 90%;
   margin: auto;
-  padding: 10rem 0;
+  padding: 8rem 0;
 }
 
 .header_text,
@@ -29,7 +29,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: Arial, sans-serif;
   color: white;
   background-color: #121212;
   padding: 20px;
@@ -99,90 +98,39 @@
 }
 
 .section_selected {
-  text-align: center;
-  margin: 10rem 0 0 5rem;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
+  margin: 8rem 0;
+  flex-direction: column;
   height: 600px;
 
-  .section_selected_text {
-    font-size: 60px;
+  .section_selected_text,
+  .section_selected_text_2 {
+    font-size: 20rem;
     font-weight: 400;
     line-height: 1;
     white-space: nowrap;
   }
-}
-
-.slider {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 600px;
-  margin-top: 5rem;
-}
-
-.slider_track {
-  display: flex;
-  width: calc(100% * 5);
-  animation: slide 15s infinite ease-in-out;
-}
-
-.slider_image {
-  width: 100%;
-  flex-shrink: 0;
-  height: 100%;
-  object-fit: cover;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-100%);
-  }
-  45% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(-200%);
-  }
-  70% {
-    transform: translateX(-200%);
-  }
-  75% {
-    transform: translateX(-300%);
-  }
-  95% {
-    transform: translateX(-300%);
-  }
-  100% {
-    transform: translateX(0);
+  .section_selected_text_2 {
+    text-align: end;
   }
 }
 
 .projectsContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  padding: 50px 100px;
-  background-color: #000;
+  justify-content: space-between;
   color: #fff;
-  min-height: 100vh;
-  font-family: "Causten", sans-serif;
 
   .guidingPrinciples {
-    font-size: 0.8rem;
-    line-height: 1.6;
-    margin-bottom: 60px;
-    width: 300px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-top: 3rem;
+    font-size: 20px;
+    width: 30%;
+    @media (max-width: 1208px) {
+      width: 100%;
+      font-size: 30px;
+    }
   }
 
   .projectItem {
@@ -191,8 +139,9 @@
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px 0;
-    width: 100%;
-
+    width: 106%;
+    cursor: pointer;
+    font-size: 10rem;
     &:hover {
       .arrow {
         transform: scale(1.3);
@@ -209,7 +158,7 @@
     .projectContent {
       flex: 1;
       h2 {
-        font-size: 2.5rem;
+        font-size: 8rem;
         font-weight: 600;
         margin: 0;
         text-transform: uppercase;
@@ -233,9 +182,7 @@
 
   .footerText {
     margin-top: 50px;
-    font-size: 1.2rem;
-    text-align: left;
-    letter-spacing: 2px;
+    font-size: 5rem;
     text-transform: uppercase;
 
     p {
@@ -299,4 +246,3 @@
     }
   }
 }
-  
