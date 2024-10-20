@@ -1,43 +1,102 @@
 .footer {
   display: flex;
   gap: 8rem;
-  padding-top: 8rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center; 
+    gap: 2rem; 
+    padding-top: 4rem; 
+  }
+
   .left {
-    width: 20%;
+    width: 15%;
     font-size: 1rem;
     font-weight: 600;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      text-align: center; 
+      margin-bottom: 2rem; 
+    }
   }
+
   .right {
     width: 100%;
+
     .social {
-      font-weight: 600;
+      font-weight: 500;
       font-size: 2rem;
       display: flex;
       justify-content: space-between;
       cursor: pointer;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        font-size: 1.5rem;
+        flex-direction: column;
+        align-items: center; 
+        gap: 1rem;
+      }
     }
   }
+
   .email {
     margin: 8rem 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: end;
 
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 4rem 0; 
+    }
+
     .email_link {
-      padding: 0 5rem 1rem 0;
+      padding: 5rem 5rem 2rem 0;
       border-bottom: 2px solid white;
       text-decoration: none;
       color: white;
       position: relative;
+
+      @media screen and (max-width: 768px) {
+        padding: 0 2rem 1rem 0;
+        font-size: 12px; 
+      }
+
       .icon {
         font-size: 80px;
         position: absolute;
-        bottom: 0;
-        right: 0;
+        bottom: 22px;
+        right: -16px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 30px;
+          margin-bottom: 10px;
+          bottom: 1px;
+          right: -10px;
+        }
       }
     }
   }
+
   .bottom {
     display: flex;
     justify-content: space-between;
+    .text {
+      position: relative;
+    }
+    .img {
+      position: absolute;
+      left: -30px;
+      @media screen and (max-width: 768px) {
+        left: -20px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 }

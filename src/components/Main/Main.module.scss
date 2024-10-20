@@ -32,7 +32,7 @@
   color: white;
   background-color: #121212;
   padding: 20px;
-  margin-top: 4rem;
+  margin-top: 10rem;
 }
 
 .scrollDownArrow {
@@ -68,7 +68,8 @@
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  margin-top: 5rem;
+  margin-top: 10rem;
+  padding-top: 12rem;
 
   @media (max-width: 1208px) {
     flex-direction: column;
@@ -113,7 +114,7 @@
     white-space: nowrap;
   }
   .section_selected_text_2 {
-    text-align: end;
+    text-align: flex-end;
   }
 }
 
@@ -136,9 +137,8 @@
   .projectItem {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 20px 0;
+    padding: 40px 0;
     width: 106%;
     cursor: pointer;
     font-size: 10rem;
@@ -159,7 +159,7 @@
       flex: 1;
       h2 {
         font-size: 8rem;
-        font-weight: 600;
+        font-weight: 400;
         margin: 0;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -177,12 +177,13 @@
       font-size: 3rem;
       transition: transform 0.3s ease;
       color: rgba(255, 255, 255, 0.8);
+      margin: 4rem 0;
     }
   }
 
   .footerText {
     margin-top: 50px;
-    font-size: 5rem;
+    font-size: 3rem;
     text-transform: uppercase;
 
     p {

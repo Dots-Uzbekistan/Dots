@@ -21,41 +21,24 @@ const Statistics = () => {
           </p>
 
           <div className={styles.statistics}>
-            <motion.div
-              className={styles.statItem}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h1>
-                <CountUp end={11} duration={2} />
-              </h1>
-              <p>MEMBERS</p>
-            </motion.div>
-
-            <motion.div
-              className={styles.statItem}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <h1>
-                <CountUp end={15} duration={2} />
-              </h1>
-              <p>PROBLEMS SOLVED</p>
-            </motion.div>
-
-            <motion.div
-              className={styles.statItem}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <h1>
-                <CountUp end={7} duration={2} />
-              </h1>
-              <p>AWARDS</p>
-            </motion.div>
+            {[
+              { value: 11, label: "MEMBERS" },
+              { value: 15, label: "PROBLEMS SOLVED" },
+              { value: 7, label: "AWARDS" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                className={styles.statItem}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <h1>
+                  <CountUp end={stat.value} duration={2} />
+                </h1>
+                <p>{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

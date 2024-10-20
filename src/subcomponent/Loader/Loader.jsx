@@ -43,7 +43,7 @@ const Loader = ({ onLoadingComplete }) => {
         transition={{ duration: 1 }}
         className={styles.loadingText}
       >
-        DOTS is loading...
+        Dots is loading...
       </motion.h1>
       <motion.h1
         initial={{ opacity: 1, y: 0 }}

@@ -1,28 +1,48 @@
 .statisticsContainer {
   background-color: #f9f9f9;
+
   .container_middle {
     width: 90%;
     margin: auto;
     display: flex;
+    flex-direction: column; // Change to column for small screens
     padding: 6rem 0;
+
+    @media (min-width: 768px) {
+      flex-direction: row; // Row layout for larger screens
+    }
   }
 }
 
 .description {
   padding-left: 5rem;
-  width: 45%;
+  width: 100%; // Full width on small screens
   font-size: 20px;
   color: #888;
   margin-bottom: 20px;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    width: 45%; // Adjusted for larger screens
+  }
 }
 
 .mainText {
-  width: 60%;
-  font-weight: 700;
+  width: 100%; // Full width on small screens
+  font-weight: 500;
   color: #000;
   margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+
   .text {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -30,24 +50,41 @@
   display: flex;
   justify-content: space-between;
   padding: 4rem 0;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column; // Center items on small screens
+  }
 }
 
 .statItem {
   text-align: center;
 
+  @media (max-width: 768px) {
+    margin: 2rem 0;
+  }
+
   h1 {
-    font-size: 8rem;
+    font-size: 5rem; // Smaller size for better readability on small screens
     margin: 0;
     color: #000;
     font-weight: 500;
+
+    @media (min-width: 768px) {
+      font-size: 8rem; // Larger size for bigger screens
+    }
   }
 
   p {
-    font-size: 2rem;
+    font-size: 1.5rem; // Smaller size for better readability on small screens
     color: #888;
     margin-top: 10px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: 500;
+
+    @media (min-width: 768px) {
+      font-size: 2rem; // Larger size for bigger screens
+    }
   }
 }
