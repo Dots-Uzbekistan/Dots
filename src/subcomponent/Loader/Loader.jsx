@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./Loader.module.scss";
+import { t } from "i18next";
 
 const Loader = ({ onLoadingComplete }) => {
   const [count, setCount] = useState(0);
@@ -43,7 +44,7 @@ const Loader = ({ onLoadingComplete }) => {
         transition={{ duration: 1 }}
         className={styles.loadingText}
       >
-        Dots is loading...
+        Dots {t("loading")}
       </motion.h1>
       <motion.h1
         initial={{ opacity: 1, y: 0 }}

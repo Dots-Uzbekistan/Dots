@@ -4,6 +4,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
 import styles from "./Footer.module.scss";
 import footer_png from "../../assets/footer.png";
+import { t } from "i18next";
 
 const Footer = () => {
   const emailAnimation = {
@@ -41,7 +42,7 @@ const Footer = () => {
         animate="visible"
         variants={emailAnimation}
       >
-        <p>DROP US A LINE, AND WE'LL GET IN TOUCH!</p>
+        <p>{t("footer")}</p>
       </motion.div>
       <motion.div
         className={styles.right}
@@ -50,9 +51,17 @@ const Footer = () => {
         variants={socialAnimation}
       >
         <div className={styles.social}>
-          <p>INSTAGRAM</p>
-          <p>TELEGRAM</p>
-          <p>+998 99 999 99 99</p>
+          <a
+            href="https://www.instagram.com/dots_uz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p>INSTAGRAM</p>
+          </a>
+          <a target="_blank" rel="noopener noreferrer">
+            <p>TELEGRAM</p>
+          </a>
+          <a href="tel:+998914012512">+998 91 401 25 12</a>
         </div>
 
         <motion.div
@@ -61,13 +70,13 @@ const Footer = () => {
           animate="visible"
           variants={emailAnimation}
         >
-          <Link
+          <a
             href="mailto:dots.community.uzbekistan@gmail.com"
             className={styles.email_link}
           >
             DOTS.COMMUNITY.UZBEKISTAN@GMAIL.COM
             <MdOutlineArrowOutward className={styles.icon} />
-          </Link>
+          </a>
         </motion.div>
         <motion.div
           className={styles.bottom}

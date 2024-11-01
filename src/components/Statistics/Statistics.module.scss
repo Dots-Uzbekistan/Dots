@@ -5,30 +5,28 @@
     width: 90%;
     margin: auto;
     display: flex;
-    flex-direction: column; // Change to column for small screens
+    flex-direction: column;
     padding: 6rem 0;
 
     @media (min-width: 768px) {
-      flex-direction: row; // Row layout for larger screens
+      flex-direction: row;
     }
   }
 }
 
 .description {
-  padding-left: 5rem;
-  width: 100%; // Full width on small screens
+  width: 100%;
   font-size: 20px;
   color: #888;
-  margin-bottom: 20px;
   font-weight: 500;
-
+  margin-top: 20px;
   @media (min-width: 768px) {
-    width: 45%; // Adjusted for larger screens
+    width: 45%;
   }
 }
 
 .mainText {
-  width: 100%; // Full width on small screens
+  width: 100%;
   font-weight: 500;
   color: #000;
   margin-bottom: 30px;
@@ -53,7 +51,7 @@
 
   @media (max-width: 768px) {
     justify-content: center;
-    flex-direction: column; // Center items on small screens
+    flex-direction: column;
   }
 }
 
@@ -65,18 +63,18 @@
   }
 
   h1 {
-    font-size: 5rem; // Smaller size for better readability on small screens
+    font-size: 5rem;
     margin: 0;
     color: #000;
     font-weight: 500;
 
     @media (min-width: 768px) {
-      font-size: 8rem; // Larger size for bigger screens
+      font-size: 8rem;
     }
   }
 
   p {
-    font-size: 1.5rem; // Smaller size for better readability on small screens
+    font-size: 1.5rem;
     color: #888;
     margin-top: 10px;
     text-transform: uppercase;
@@ -84,7 +82,7 @@
     font-weight: 500;
 
     @media (min-width: 768px) {
-      font-size: 2rem; // Larger size for bigger screens
+      font-size: 2rem;
     }
   }
 }
