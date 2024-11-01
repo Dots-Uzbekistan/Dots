@@ -58,7 +58,7 @@ const Footer = () => {
           >
             <p>INSTAGRAM</p>
           </a>
-          <a target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/dots_community_uz" target="_blank" rel="noopener noreferrer">
             <p>TELEGRAM</p>
           </a>
           <a href="tel:+998914012512">+998 91 401 25 12</a>
