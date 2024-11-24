@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./Navbar.module.scss";
 import { useTranslation } from "react-i18next";
 import { motion, useAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
+import { ScrollContext } from "../ScrollContext";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const { scrollToSection } = useContext(ScrollContext);
 
   const controls = useAnimation();
   const { ref, inView } = useInView({ threshold: 0.2 });
@@ -63,7 +65,7 @@ const Navbar = () => {
       className={`${styles.navbar} ${isSticky ? styles.sticky : ""}`}
       ref={ref}
     >
-      <div className={styles.wrapper_middle}>
+      <div className={styles.wrapper_top}>
         <Link to={"/"}>
           <div className={styles.logo}>
             <svg
@@ -165,10 +167,27 @@ const Navbar = () => {
               exit="closed"
               variants={menuVariants}
             >
-              <motion.p whileHover={{ scale: 1.1 }}>{t("home")}</motion.p>
-              <motion.p whileHover={{ scale: 1.1 }}>{t("about")}</motion.p>
-              <motion.p whileHover={{ scale: 1.1 }}>{t("projects")}</motion.p>
-              <motion.p whileHover={{ scale: 1.1 }}>{t("contact")}</motion.p>
+              <motion.p whileHover={{ scale: 1.1 }}>
+                <Link to="/" className={styles.link}>{t("home")}</Link>
+              </motion.p>
+              <motion.p
+                whileHover={{ scale: 1.1 }}
+                onClick={() => scrollToSection("introduction")}
+              >
+                {t("about")}
+              </motion.p>
+              <motion.p
+                whileHover={{ scale: 1.1 }}
+                onClick={() => scrollToSection("projects")}
+              >
+                {t("projects")}
+              </motion.p>
+              <motion.p
+                whileHover={{ scale: 1.1 }}
+                onClick={() => scrollToSection("contact")}
+              >
+                {t("contact")}
+              </motion.p>
             </motion.div>
           )}
         </div>

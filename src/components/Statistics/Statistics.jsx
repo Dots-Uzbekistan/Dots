@@ -18,8 +18,8 @@ const Statistics = () => {
 
   return (
     <section className={styles.statisticsContainer}>
-      <div className={styles.container_middle}>
-        <div>
+      <div className={styles.wrapper_statistics}>
+        <div className={styles.descriptionContainer}>
           <motion.p
             className={styles.description}
             initial="hidden"

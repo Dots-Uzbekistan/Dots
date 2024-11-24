@@ -1,16 +1,20 @@
 .main {
   background-color: #121212;
+  width: 100%;
+  margin: auto;
   height: 100%;
   color: white;
   overflow: hidden;
 }
-
-.wrapper_middle_main {
-  width: 90%;
-  margin: auto;
+.wrapper_all {
+  max-width: 1720px;
+  width: 100%;
+  margin: 4rem auto;
   padding: 8rem 0;
+  @media (max-width: 1920px) {
+    padding: 0 2rem;
+  }
 }
-
 .header_text,
 .header_text_2,
 .header_text_3 {
@@ -69,8 +73,8 @@
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  margin-top: 10rem;
-  padding-top: 12rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
 
   @media (max-width: 1208px) {
     flex-direction: column;
@@ -130,6 +134,11 @@
 }
 .projects {
   width: 60%;
+  height: 100%;
+  margin: 2rem 0;
+  @media (max-width: 1500px) {
+    width: 100%;
+  }
 }
 
 .projectsContainer {
@@ -137,7 +146,8 @@
   align-items: flex-start;
   justify-content: space-between;
   color: #fff;
-  @media screen and (max-width: 1208px) {
+  padding-top: 10rem;
+  @media screen and (max-width: 1500px) {
     flex-direction: column;
   }
 
@@ -145,9 +155,10 @@
     margin-top: 3rem;
     font-size: 20px;
     width: 30%;
-    @media (max-width: 1208px) {
+    @media (max-width: 1500px) {
       width: 100%;
       font-size: 30px;
+      margin-bottom: 2rem;
     }
   }
 
@@ -156,7 +167,7 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 40px 0;
-    width: 106%;
+    width: 100%;
     cursor: pointer;
     font-size: 10rem;
     &:hover {
@@ -164,9 +175,9 @@
         transform: rotate(-45deg);
       }
     }
-    @media (max-width: 1208px) {
+    @media (max-width: 1500px) {
       width: 100%;
-      padding: 40px 0 40px 2rem;
+      padding: 40px 0;
       border-bottom: none;
       .arrow {
         display: none;
@@ -192,6 +203,9 @@
         @media (max-width: 1208px) {
           font-size: 3rem;
         }
+        @media screen and (max-width: 700px) {
+          font-size: 1rem;
+        }
       }
 
       p {
@@ -201,6 +215,9 @@
         letter-spacing: 1px;
         @media (max-width: 1208px) {
           font-size: 0.8rem;
+        }
+        @media screen and (max-width: 700px) {
+          font-size: 12px;
         }
       }
     }

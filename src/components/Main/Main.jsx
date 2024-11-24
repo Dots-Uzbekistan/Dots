@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Main.module.scss";
 import { motion } from "framer-motion";
@@ -6,11 +6,13 @@ import { useInView } from "react-intersection-observer";
 import Footer from "../Footer/Footer";
 import Statistics from "../Statistics/Statistics";
 import { FaArrowDown } from "react-icons/fa6";
+import { ScrollContext } from "../ScrollContext";
 
 const Main = () => {
   const { t } = useTranslation();
   const introductionRef = useRef(null);
   const sectionRef = useRef(null);
+  const { sections } = useContext(ScrollContext);
 
   const scrollToIntroduction = () => {
     if (introductionRef.current) {
@@ -72,7 +74,7 @@ const Main = () => {
 
   return (
     <section className={styles.main}>
-      <div className={styles.wrapper_middle_main}>
+      <div className={styles.wrapper_all}>
         <motion.h1
           ref={headerText1Ref}
           initial="hidden"
@@ -103,7 +105,11 @@ const Main = () => {
           {t("header_text_3")}
         </motion.h1>
 
-        <div className={styles.scrollDownContainer}>
+        <div
+          className={styles.scrollDownContainer}
+          ref={sections.introduction}
+          id="introduction"
+        >
           <p>{t("scroll_down")}</p>
           <div
             className={styles.scrollDownArrow}
@@ -126,7 +132,7 @@ const Main = () => {
           </div>
         </div>
 
-        <section className={styles.introduction} ref={introductionRef}>
+        <section className={styles.introduction}>
           <motion.article
             initial="hidden"
             animate="visible"
@@ -174,7 +180,11 @@ const Main = () => {
             {t("works")}
           </motion.h1>
         </section>
-        <section className={styles.projectsContainer}>
+        <section
+          ref={sections.projects}
+          id="projects"
+          className={styles.projectsContainer}
+        >
           <div className={styles.guidingPrinciples}>
             <p>{t("guiding")}</p>
           </div>

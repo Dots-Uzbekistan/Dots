@@ -1,15 +1,29 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const CursorProvider = ({ children }) => {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
-  const hoverValue = useMotionValue(1); // 1 for normal, 1.5 for hover scale
+  const hoverValue = useMotionValue(1);
+  const [isCursorEnabled, setIsCursorEnabled] = useState(true);
 
   const cursorScale = useTransform(hoverValue, [1, 1.5], [1, 2]);
   const cursorRotate = useTransform(cursorX, (x) => x / 100);
 
   useEffect(() => {
+    const updateCursorState = () => {
+      setIsCursorEnabled(window.innerWidth >= 500);
+    };
+    updateCursorState();
+
+    window.addEventListener("resize", updateCursorState);
+
+    return () => window.removeEventListener("resize", updateCursorState);
+  }, []);
+
+  useEffect(() => {
+    if (!isCursorEnabled) return;
+
     const handleMouseMove = (event) => {
       cursorX.set(event.clientX);
       cursorY.set(event.clientY);
@@ -17,19 +31,22 @@ const CursorProvider = ({ children }) => {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [cursorX, cursorY]);
+  }, [cursorX, cursorY, isCursorEnabled]);
 
   const handleMouseEnter = () => {
-    hoverValue.set(1.5); // Scale up on hover
+    if (isCursorEnabled) hoverValue.set(1.5);
   };
 
   const handleMouseLeave = () => {
-    hoverValue.set(1); // Scale down when not hovered
+    if (isCursorEnabled) hoverValue.set(1);
   };
+
+  if (!isCursorEnabled) {
+    return <div>{children}</div>;
+  }
 
   return (
     <>
-      {/* Global Custom Cursor */}
       <motion.div
         className="custom-cursor"
         style={{
@@ -40,19 +57,18 @@ const CursorProvider = ({ children }) => {
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        {/* Outer glowing ring */}
         <motion.div
           className="cursor-outer"
           style={{
             scale: cursorScale,
             backgroundColor:
               hoverValue.get() === 1.5
-                ? "rgba(122, 31, 224, 0.3)" // #7A1FE0
-                : "rgba(169, 88, 255, 0.2)", // #A958FF
+                ? "rgba(122, 31, 224, 0.3)"
+                : "rgba(169, 88, 255, 0.2)",
             boxShadow:
               hoverValue.get() === 1.5
-                ? "0 0 30px rgba(122, 31, 224, 0.6)" // #7A1FE0
-                : "0 0 15px rgba(169, 88, 255, 0.3)", // #A958FF
+                ? "0 0 30px rgba(122, 31, 224, 0.6)"
+                : "0 0 15px rgba(169, 88, 255, 0.3)",
           }}
         />
 
@@ -62,8 +78,8 @@ const CursorProvider = ({ children }) => {
           style={{
             backgroundColor:
               hoverValue.get() === 1.5
-                ? "rgba(106, 8, 217, 1)" // #6A08D9
-                : "rgba(255, 255, 255, 1)", // White for normal state
+                ? "rgba(106, 8, 217, 1)"
+                : "rgba(255, 255, 255, 1)",
           }}
         />
       </motion.div>

@@ -1,6 +1,15 @@
 .footer {
   display: flex;
   gap: 8rem;
+  width: 100%;
+  .container_footer {
+    max-width: 1720px;
+    width: 100%;
+    margin: 4rem auto;
+    @media (max-width: 1920px) {
+      padding: 0 2rem;
+    }
+  }
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -30,6 +39,7 @@
       display: flex;
       justify-content: space-between;
       cursor: pointer;
+      padding-top: 3rem;
       a {
         color: white;
         text-decoration: none;
